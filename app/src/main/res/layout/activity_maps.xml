@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/SrcLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.90" />
+
+            <Button
+                android:id="@+id/BSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onSearch"
+                android:text="Search" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                tools:context=".MapsActivity" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="#20000000"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/Bzoomin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="onZoom"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/Bzoomout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="onZoom"
+                    android:text="-" />
+
+                <Button
+                    android:id="@+id/cloc"
+                    android:layout_width="40dp"
+                    android:layout_height="117dp"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="current"
+                    android:text="Current Loc" />
+
+                <Button
+                    android:id="@+id/autoCom"
+                    android:layout_width="40dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="autcom"
+                    android:text="Autocom" />
+
+                <Button
+                    android:id="@+id/googlePlac"
+                    android:layout_width="40dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="gogpl"
+                    android:text="Gpl" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:layout_width="@dimen/nav_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        android:name="com.map.tr.trmap.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

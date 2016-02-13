@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:background="#D000"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <Button
+                android:id="@+id/get_my_location_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showMyLocation"
+                android:padding="8dp"
+                android:text="@string/curr_location"/>
+
+            <Button
+                android:id="@+id/get_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="routeDisplay"
+                android:padding="8dp"
+                android:text="@string/route"/>
+
+            <Button
+                android:id="@+id/get_route2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="routeDisplay2"
+                android:padding="8dp"
+                android:text="@string/route2"/>
+
+            <Button
+                android:id="@+id/get_route3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="routeDisplay2"
+                android:padding="8dp"
+                android:text="@string/path"/>
+        </LinearLayout>
+</RelativeLayout>
